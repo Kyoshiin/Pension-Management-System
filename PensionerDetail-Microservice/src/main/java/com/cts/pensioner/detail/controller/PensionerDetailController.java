@@ -38,9 +38,5 @@ public class PensionerDetailController {
         } else {
             throw new AuthorizationException("Not allowed");
         }
-
-
     }
-
-
 }
