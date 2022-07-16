@@ -8,5 +8,4 @@ import com.cts.pensioner.detail.model.PensionerDetail;
 @Repository
 public interface PensionerDetailRepository extends JpaRepository<PensionerDetail, Long> {
 
-	//todo:if find by adhaar
 }

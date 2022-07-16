@@ -34,7 +34,7 @@ public class PensionerDetailController {
     public List<PensionerDetail> getAllPensioner(
             @RequestHeader(value = "Authorization") String requestTokenHeader) throws AuthorizationException {
         if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
-            return pensionerDetailService.getAllPensioner(requestTokenHeader);
+            return pensionerDetailService.getAllPensioner();
         } else {
             throw new AuthorizationException("Not allowed");
         }

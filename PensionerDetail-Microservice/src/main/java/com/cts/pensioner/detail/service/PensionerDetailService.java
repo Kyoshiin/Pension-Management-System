@@ -16,10 +16,10 @@ public class PensionerDetailService {
 
     public PensionerDetail getPensionerDetailByAadharCard(long aadharNumber) throws AadharNumberNotFound {
         return pensionerDetailRepository.findById(aadharNumber).orElseThrow(() ->
-                new AadharNumberNotFound("Aadhar Card Number is not Valid. Please check it and try again"));//TODO:edit
+                new AadharNumberNotFound("Aadhaar Card Number is not Valid. Please check it and try again"));
     }
 
-    public List<PensionerDetail> getAllPensioner(String token) {
+    public List<PensionerDetail> getAllPensioner() {
         return pensionerDetailRepository.findAll();
     }
 
