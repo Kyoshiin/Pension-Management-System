@@ -21,8 +21,10 @@ import com.cts.authorization.model.AuthenticationResponse;
 import com.cts.authorization.service.JwtUserDetailsService;
 
 import io.jsonwebtoken.ExpiredJwtException;
+import lombok.extern.slf4j.Slf4j;
 
 @RestController
+@Slf4j
 @CrossOrigin
 public class JwtAuthenticationController {
 
@@ -46,12 +48,11 @@ public class JwtAuthenticationController {
                             authenticationRequest.getUserName(),
                             authenticationRequest.getPassword()
                     ));
-
+            log.info("Valid User detected - logged in");
         } catch (BadCredentialsException e) {
             e.printStackTrace();
             throw new AuthorizationException("Incorrect username or password");
         }
-
         //if auth successful need to create jwt token
 
         //get userdetails for token

@@ -19,15 +19,12 @@ public class ProcessPensionService {
     private PensionDisbursementClient pensionDisbursementClient;
 
     public PensionDetail calculatePension(String token, PensionerInput pensionerInput) throws PensionerDetailException, AuthorizationException, AadharNumberNotFound {
-
-        System.out.println("Aadhaar" + pensionerInput.getAadharNumber());
-
+        
         PensionerDetail pensionerDetail;
 
         //getting pensionerDetail via other micorservice
         try {
             pensionerDetail = pensionerDetailClient.getPensionerDetailByAadhaar(token, pensionerInput.getAadharNumber());
-            System.out.println("pensionerDetail" + pensionerDetail);
         } catch (AadharNumberNotFound e) {
             throw new AadharNumberNotFound("Aadhaar Card Number is not Valid. Please check it and try again");
         }
@@ -56,6 +53,7 @@ public class ProcessPensionService {
             throw new PensionerDetailException("Invalid pensioner detail provided, please provide valid detail.");
         }
     }
+
     //get the Process Response Code(10 or 21) If Process code is 10 then Suceess and 21 means not success
     public ProcessPensionResponse getCode(String token, ProcessPensionInput processPensionInput) throws AuthorizationException, AadharNumberNotFound {
         try {

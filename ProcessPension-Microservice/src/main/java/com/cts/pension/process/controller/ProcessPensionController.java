@@ -10,14 +10,9 @@ import com.cts.pension.process.model.ProcessPensionInput;
 import com.cts.pension.process.model.ProcessPensionResponse;
 import com.cts.pension.process.service.ProcessPensionService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-/*
-
- */
+@CrossOrigin
 @RestController
 public class ProcessPensionController {
 
@@ -51,7 +46,7 @@ public class ProcessPensionController {
 
         //check authorization
         if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
-            System.out.println("Authorized in processPension");
+
             //return the process code
             return processPensionService.getCode(requestTokenHeader, processPensionInput);
         } else {

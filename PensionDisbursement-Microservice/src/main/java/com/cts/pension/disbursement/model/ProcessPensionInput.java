@@ -5,36 +5,37 @@ public class ProcessPensionInput {
     private double pensionAmount;
     private double bankCharge;
 
-	public ProcessPensionInput() {
-	}
+    public ProcessPensionInput() {
+    }
 
-	public ProcessPensionInput(Long aadharNumber, double pensionAmount, double bankCharge) {
-		this.aadharNumber = aadharNumber;
-		this.pensionAmount = pensionAmount;
-		this.bankCharge = bankCharge;
-	}
+    public ProcessPensionInput(Long aadharNumber, double pensionAmount, double bankCharge) {
+        this.aadharNumber = aadharNumber;
+        this.pensionAmount = pensionAmount;
+        this.bankCharge = bankCharge;
+    }
 
-	public Long getAadharNumber() {
-		return aadharNumber;
-	}
+    public Long getAadharNumber() {
+        return aadharNumber;
+    }
 
-	public void setAadharNumber(Long aadharNumber) {
-		this.aadharNumber = aadharNumber;
-	}
+    public void setAadharNumber(Long aadharNumber) {
+        this.aadharNumber = aadharNumber;
+    }
 
-	public double getPensionAmount() {
-		return pensionAmount;
-	}
+    public double getPensionAmount() {
+        return pensionAmount;
+    }
 
-	public void setPensionAmount(double pensionAmount) {
-		this.pensionAmount = pensionAmount;
-	}
+    public void setPensionAmount(double pensionAmount) {
+        this.pensionAmount = pensionAmount;
+    }
 
-	public double getBankCharge() {
-		return bankCharge;
-	}
+    public double getBankCharge() {
+        return bankCharge;
+    }
 
-	public void setBankCharge(double bankCharge) {
-		this.bankCharge = bankCharge;
-	}
+    public void setBankCharge(double bankCharge) {
+        this.bankCharge = bankCharge;
+    }
+
 }
