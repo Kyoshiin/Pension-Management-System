@@ -23,18 +23,9 @@ public class PensionerDetailController {
     public PensionerDetail getPensionerDetailByAadhar(
             @RequestHeader(value = "Authorization") String requestTokenHeader,
             @PathVariable long aadharNumber) throws AuthorizationException, AadharNumberNotFound {
+
         if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
             return pensionerDetailService.getPensionerDetailByAadharCard(aadharNumber);
-        } else {
-            throw new AuthorizationException("Not allowed");
-        }
-    }
-
-    @GetMapping("/getAllPensioner")
-    public List<PensionerDetail> getAllPensioner(
-            @RequestHeader(value = "Authorization") String requestTokenHeader) throws AuthorizationException {
-        if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
-            return pensionerDetailService.getAllPensioner();
         } else {
             throw new AuthorizationException("Not allowed");
         }

@@ -52,7 +52,7 @@ public class PensionerDetailControllerTest {
 	  void testGetResponseWrongAuthorization() throws Exception
 	  {
 		  when(authorisingClient.authorizeTheRequest("Bearer @token@token")).thenReturn(false);
-		  mockMvc.perform(get("/api/v1/PensionerDetailByAadhaar/420559429029").header("Authorization", "Bearer @token@token"))
+		  mockMvc.perform(get("/PensionerDetailByAadhaar/420559429029").header("Authorization", "Bearer @token@token"))
 				.andExpect(status().isForbidden());
 	  }
 	  @Test 
@@ -68,30 +68,6 @@ public class PensionerDetailControllerTest {
 	  {
 		  //when(authorisingClient.authorizeTheRequest("Bearer @token@token")).thenReturn(true);
 		  mockMvc.perform(get("/api/v1/PensionerDetailByAadhaar/420559429029")).andExpect(status().isBadRequest());
-	  }
-
-	  @Test 
-	  void testGetAllPensioner() throws Exception
-	  {
-		  when(authorisingClient.authorizeTheRequest("Bearer @token@token")).thenReturn(true);
-		  mockMvc.perform(get("/api/v1/getAllPensioner").header("Authorization", "Bearer @token@token"))
-				.andExpect(status().isOk());
-	  }
-	  
-	  @Test 
-	  void testGetAllPensionerWrongAuthorization() throws Exception
-	  {
-		  when(authorisingClient.authorizeTheRequest("Bearer @token@token")).thenReturn(false);
-		  mockMvc.perform(get("/api/v1/getAllPensioner").header("Authorization", "Bearer @token@token"))
-				.andExpect(status().isForbidden());
-	  }
-	  
-	  @Test 
-	  void testGetAllPensionerBadRequest() throws Exception
-	  {
-		//  when(authorisingClient.authorizeTheRequest("Bearer @token@token")).thenReturn(true);
-		  mockMvc.perform(get("/api/v1/getAllPensioner"))
-				.andExpect(status().isBadRequest());
 	  }
 
 	

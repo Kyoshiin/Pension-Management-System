@@ -30,12 +30,10 @@ export class AuthService {
 
   // method to get token from local storage
   getToken() {
-    // console.log("get token called");
     return localStorage.getItem("token");
   }
 
   // method to set to session, by storing token in local storage
-  // adding Bearer for auth
   setSession(token: string) {
     localStorage.setItem('token', token);
   }

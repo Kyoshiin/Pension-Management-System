@@ -3,7 +3,7 @@ values (420559429029, 'Pratyay', '1999-04-28', 'BSDPS1495K', 29000, 1200, 'self'
 insert into pensioner (aadhar, name, dob, pan, salary, allowances, pension, bank, accnumber, banktype)
 values (420559429031, 'Sumanth', '1999-01-04', 'SBIN0000388', 29000, 1200, 'self', 'SBI', 9029856585, 'private');
 insert into pensioner (aadhar, name, dob, pan, salary, allowances, pension, bank, accnumber, banktype)
-values (320559431029, 'Joy', '1999-06-13', 'SBIN0000116', 27000, 1000, 'self', 'SBI', 8130585625, 'private');
+values (320559431029, 'Anurag', '1999-06-13', 'SBIN0000116', 27000, 1000, 'self', 'SBI', 8130585625, 'private');
 --
 insert into pensioner (aadhar, name, dob, pan, salary, allowances, pension, bank, accnumber, banktype)
 values (420555821047, 'Viveka', '1999-02-18', 'TYUO109874', 30000, 1500, 'self', 'HSBC', 7017582645, 'private');

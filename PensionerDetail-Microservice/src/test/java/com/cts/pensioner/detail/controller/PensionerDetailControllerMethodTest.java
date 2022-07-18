@@ -43,19 +43,9 @@ public class PensionerDetailControllerMethodTest {
     public void testGetPensionerDetailByAadhar() throws AadharNumberNotFound, AuthorizationException {
         String token = "dummy";
         Mockito.when(authorisingClient.authorizeTheRequest(token)).thenReturn(true);
-        PensionerDetail pensionerDetail = new PensionerDetail(420559429029l, "Parthik", LocalDate.of(1999, 12, 03), "BSDPS1495K", 29000, 1200, "self", "SBI", "9029486523", "private");
+        PensionerDetail pensionerDetail = new PensionerDetail(420559429029l, "Pratyay", LocalDate.of(1999, 04, 28), "BSDPS1495K", 29000, 1200, "self", "SBI", "9029486523", "private");
         Mockito.when(pensionerDetailService.getPensionerDetailByAadharCard(420559429029l)).thenReturn(pensionerDetail);
         assertEquals(pensionerDetailController.getPensionerDetailByAadhar(token, 420559429029l), pensionerDetail);
-    }
-
-    @Test
-    public void testGetAllPensioner() throws AuthorizationException {
-        String token = "dummy";
-        Mockito.when(authorisingClient.authorizeTheRequest(token)).thenReturn(true);
-        List<PensionerDetail> pensionerDetails = new ArrayList<PensionerDetail>();
-
-        assertEquals(pensionerDetailController.getAllPensioner(token), pensionerDetails);
-
     }
 
 }

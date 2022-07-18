@@ -5,7 +5,7 @@
             <div class="form-group">
                 <label for="username"><strong>Username <span class="text-danger">*</span></strong></label>
                 <input type="text" class="form-control mt-1" name="username" id="username" #username="ngModel"
-                    [(ngModel)]='userModel.userName' minlength="2" maxlength="25" placeholder="Enter Username"
+                    [(ngModel)]='userModel.userName' minlength="3" maxlength="25" placeholder="Enter Username"
                     required /> 
                 <!-- Validaitons -->
                 <div *ngIf="username.invalid && (username.dirty || username.touched)" class="text-error">
@@ -13,7 +13,7 @@
                         * Username is required
                     </div>
                     <div *ngIf="username.errors?.minlength">
-                        * Username must be at least 4 characters long
+                        * Username must be at least 3 characters long
                     </div>
                     <div *ngIf="username.errors?.maxlength">
                         * Username must be at most 25 characters long
