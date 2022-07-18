@@ -1,5 +1,5 @@
-# POD-4-pension-management
-Code for MFPE for the project, Pension Management by POD-4 of cohort INTCDE21IJ028
+# Team-6-pension-management
+Code for Final project in internship training, Pension Management by Team-6 of cohort GN22IOTJ001
 
 ## Team Members
 1. PRATYAY ROY
