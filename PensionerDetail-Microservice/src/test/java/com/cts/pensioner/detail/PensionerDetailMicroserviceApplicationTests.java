@@ -7,9 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.time.LocalDate;
 
 import com.cts.pensioner.detail.model.PensionerDetail;
-
-import nl.jqno.equalsverifier.EqualsVerifier;
-import nl.jqno.equalsverifier.Warning;
+;
 
 @SpringBootTest
 class PensionerDetailMicroserviceApplicationTests {
@@ -23,11 +21,6 @@ class PensionerDetailMicroserviceApplicationTests {
 	{
 		PensionerDetailMicroserviceApplication.main(new String[] {});
 	}
-//	@Test
-//	void testPensionerDeatil() {
-//		EqualsVerifier
-//		.simple().forClass(PensionerDetail.class).verify();
-//}
 	
 	
 	@Test

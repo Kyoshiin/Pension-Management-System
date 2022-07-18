@@ -10,6 +10,12 @@ import javax.persistence.Table;
 @Table(name = "users")
 public class UserModel {
 
+    public UserModel(int id, String userName, String password) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+    }
+
     @Id
     @GeneratedValue
     private int id;
@@ -17,6 +23,10 @@ public class UserModel {
     private String userName;
 
     private String password;
+
+    public UserModel() {
+
+    }
 
     public String getUserName() {
         return userName;

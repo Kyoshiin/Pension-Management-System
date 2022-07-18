@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-@FeignClient(name = "PensionerDetail-Microservice", url = "http://localhost:8200/pensioner")
+@FeignClient(name = "PensionerDetail-Microservice", url = "${pensionDetail.url}")
 public interface PensionDetailClient {
 
     @GetMapping("/PensionerDetailByAadhaar/{aadharNumber}")

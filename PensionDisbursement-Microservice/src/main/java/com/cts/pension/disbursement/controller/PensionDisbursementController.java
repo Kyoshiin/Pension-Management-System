@@ -28,7 +28,6 @@ public class PensionDisbursementController {
             @RequestBody ProcessPensionInput processpensionInput) throws AuthorizationException, AadharNumberNotFound {
 
         if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
-            System.out.println(processpensionInput.getAadharNumber()+" "+processpensionInput.getBankCharge());
             return pensionDisbursementService.getResponse(requestTokenHeader, processpensionInput);
         } else {
             throw new AuthorizationException("Not allowed");

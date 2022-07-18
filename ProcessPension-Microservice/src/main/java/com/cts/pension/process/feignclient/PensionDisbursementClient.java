@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 
 
-@FeignClient(name = "PensionDisbursement-Microservices", url = "http://localhost:8300/disbursement")
+@FeignClient(name = "PensionDisbursement-Microservices", url = "${pensionDisbursement.url}")
 public interface PensionDisbursementClient {
 
     @PostMapping("/disbursePension")
