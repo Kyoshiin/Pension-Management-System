@@ -126,6 +126,7 @@ If details are valid, pension amount and bankCharges is correct then user will f
   "bankCharge": 550,
   "pensionAmount": 24400
 }
+```
 
 ## 5. Pension Management Portal
 
