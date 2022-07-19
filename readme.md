@@ -46,7 +46,8 @@ This service is responsible to provide login access to the application and provi
   
   **Description**
       
-      The intent of this Microservice is to provide the Pensioner detail like name, PAN detail, Bank name and bank account number based on Aadhaar number
+      The intent of this Microservice is to provide the Pensioner detail like name, PAN detail, 
+      Bank name and bank account number based on Aadhaar number
     
    **Steps and Action**
    
@@ -57,8 +58,9 @@ This service is responsible to provide login access to the application and provi
    **Endpoint**
    
       URL - http://localhost:8200/pensioner/PensionerDetailByAadhaar/420559429029
-      Then enter previously generated **valid** Token that you had copied into the Authorization header as Bearer Token.
-      This endpoint accept the user request and provides the Pensioner details only to authorized request. Access this using the POSTMAN client
+      Then enter previously generated valid Token that you had copied into the Authorization header as Bearer Token.
+      This endpoint accept the user request and provides the Pensioner details only to authorized request. 
+      Access this using the POSTMAN client
       
       Method - GET
       Input - Aadhaar Number => 420559429029
@@ -69,6 +71,7 @@ This service is responsible to provide login access to the application and provi
   This microservice is responsible for verifying pension amount and bank charges for provided aadhaar number.
 
   **Endpoint**
+  
     URL - http://localhost:8300/disbursement/disbursePension
     Then enter previously generated **valid** Token that you had copied into the Authorization header as Bearer Token.
     This endpoint performs the verification only to authorized request. Access this using the POSTMAN client
@@ -99,6 +102,7 @@ If details are valid, pension amount and bankCharges is correct then user will f
 * Then enter previously generated **valid** Token that you had copied into the Authorization header as Bearer Token.
 * Select POST method
 * Then enter details as follows:
+
 **Valid Input**
 ```
 {
