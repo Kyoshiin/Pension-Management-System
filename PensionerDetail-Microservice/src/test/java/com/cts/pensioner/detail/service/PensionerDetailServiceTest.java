@@ -39,7 +39,7 @@ public class PensionerDetailServiceTest {
 		String token = "dummy";
 //		Mockito.when(authClient.authorizeTheRequest(token)).thenReturn(true);
 		Mockito.when(pensionerDetailRepository.findById(420559429029l)).thenReturn(Optional.of(pensionerDetail));
-		assertEquals(pensionerDetailService.getPensionerDetailByAadharCard(420559429029l),pensionerDetail);
+		assertEquals(pensionerDetailService.getPensionerDetailByAadharCardFromDB(420559429029l),pensionerDetail);
 	}
 	
 }

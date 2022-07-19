@@ -1,6 +1,5 @@
 package com.cts.pensioner.detail.model;
 
-import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
@@ -34,100 +33,100 @@ public class PensionerDetail {
     @Column(name = "banktype")
     private String bankType;
 
-	public PensionerDetail(long aadharNumber, String name, LocalDate dateOfBirth, String pan, double salaryEarned, double allowances, String pensionType, String bankName, String accountNumber, String bankType) {
-		this.aadharNumber = aadharNumber;
-		this.name = name;
-		this.dateOfBirth = dateOfBirth;
-		this.pan = pan;
-		this.salaryEarned = salaryEarned;
-		this.allowances = allowances;
-		this.pensionType = pensionType;
-		this.bankName = bankName;
-		this.accountNumber = accountNumber;
-		this.bankType = bankType;
-	}
+    public PensionerDetail(long aadharNumber, String name, LocalDate dateOfBirth, String pan, double salaryEarned, double allowances, String pensionType, String bankName, String accountNumber, String bankType) {
+        this.aadharNumber = aadharNumber;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.pan = pan;
+        this.salaryEarned = salaryEarned;
+        this.allowances = allowances;
+        this.pensionType = pensionType;
+        this.bankName = bankName;
+        this.accountNumber = accountNumber;
+        this.bankType = bankType;
+    }
 
-	public PensionerDetail() {
+    public PensionerDetail() {
 
-	}
+    }
 
-	public long getAadharNumber() {
-		return aadharNumber;
-	}
+    public long getAadharNumber() {
+        return aadharNumber;
+    }
 
-	public void setAadharNumber(long aadharNumber) {
-		this.aadharNumber = aadharNumber;
-	}
+    public void setAadharNumber(long aadharNumber) {
+        this.aadharNumber = aadharNumber;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public LocalDate getDateOfBirth() {
-		return dateOfBirth;
-	}
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
 
-	public void setDateOfBirth(LocalDate dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
-	public String getPan() {
-		return pan;
-	}
+    public String getPan() {
+        return pan;
+    }
 
-	public void setPan(String pan) {
-		this.pan = pan;
-	}
+    public void setPan(String pan) {
+        this.pan = pan;
+    }
 
-	public double getSalaryEarned() {
-		return salaryEarned;
-	}
+    public double getSalaryEarned() {
+        return salaryEarned;
+    }
 
-	public void setSalaryEarned(double salaryEarned) {
-		this.salaryEarned = salaryEarned;
-	}
+    public void setSalaryEarned(double salaryEarned) {
+        this.salaryEarned = salaryEarned;
+    }
 
-	public double getAllowances() {
-		return allowances;
-	}
+    public double getAllowances() {
+        return allowances;
+    }
 
-	public void setAllowances(double allowances) {
-		this.allowances = allowances;
-	}
+    public void setAllowances(double allowances) {
+        this.allowances = allowances;
+    }
 
-	public String getPensionType() {
-		return pensionType;
-	}
+    public String getPensionType() {
+        return pensionType;
+    }
 
-	public void setPensionType(String pensionType) {
-		this.pensionType = pensionType;
-	}
+    public void setPensionType(String pensionType) {
+        this.pensionType = pensionType;
+    }
 
-	public String getBankName() {
-		return bankName;
-	}
+    public String getBankName() {
+        return bankName;
+    }
 
-	public void setBankName(String bankName) {
-		this.bankName = bankName;
-	}
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
+    }
 
-	public String getAccountNumber() {
-		return accountNumber;
-	}
+    public String getAccountNumber() {
+        return accountNumber;
+    }
 
-	public void setAccountNumber(String accountNumber) {
-		this.accountNumber = accountNumber;
-	}
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
-	public String getBankType() {
-		return bankType;
-	}
+    public String getBankType() {
+        return bankType;
+    }
 
-	public void setBankType(String bankType) {
-		this.bankType = bankType;
-	}
+    public void setBankType(String bankType) {
+        this.bankType = bankType;
+    }
 }

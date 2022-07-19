@@ -5,10 +5,9 @@ import com.cts.pensioner.detail.exception.AuthorizationException;
 import com.cts.pensioner.detail.feignclient.AuthorisingClient;
 import com.cts.pensioner.detail.model.PensionerDetail;
 import com.cts.pensioner.detail.service.PensionerDetailService;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 public class PensionerDetailController {
@@ -25,7 +24,8 @@ public class PensionerDetailController {
             @PathVariable long aadharNumber) throws AuthorizationException, AadharNumberNotFound {
 
         if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
-            return pensionerDetailService.getPensionerDetailByAadharCard(aadharNumber);
+//            return pensionerDetailService.getPensionerDetailByAadharCardFromDB(aadharNumber);
+            return pensionerDetailService.getPensionerDetailByAadhaarNumberFromCSV(String.valueOf(aadharNumber));
         } else {
             throw new AuthorizationException("Not allowed");
         }
