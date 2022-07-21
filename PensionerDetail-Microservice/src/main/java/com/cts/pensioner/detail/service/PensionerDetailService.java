@@ -2,8 +2,6 @@ package com.cts.pensioner.detail.service;
 
 import com.cts.pensioner.detail.exception.AadharNumberNotFound;
 import com.cts.pensioner.detail.model.PensionerDetail;
-import com.cts.pensioner.detail.repository.PensionerDetailRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -18,26 +16,14 @@ import java.util.Date;
 @Service
 public class PensionerDetailService {
 
-    @Autowired
-    private PensionerDetailRepository pensionerDetailRepository;
-
-
-    /**
-     * Loads pensioner details from sql file
-     */
-    public PensionerDetail getPensionerDetailByAadharCardFromDB(long aadharNumber) throws AadharNumberNotFound {
-        return pensionerDetailRepository.findById(aadharNumber).orElseThrow(() ->
-                new AadharNumberNotFound("Aadhaar Card Number is not Valid. Please check it and try again"));
-    }
-
     /**
      * Loads pensioner details from flat(csv) file
      */
-    public PensionerDetail getPensionerDetailByAadhaarNumberFromCSV(String aadhaarNumber) throws AadharNumberNotFound {
+    public PensionerDetail getPensionerDetailByAadhaarNumber(String aadhaarNumber) throws AadharNumberNotFound {
 
         String line;
         BufferedReader br = new BufferedReader(
-                new InputStreamReader(this.getClass().getResourceAsStream("/details.csv")));
+                new InputStreamReader(this.getClass().getResourceAsStream("/pensionersData.csv")));
         try {
             while ((line = br.readLine()) != null) // returns a Boolean value
             {

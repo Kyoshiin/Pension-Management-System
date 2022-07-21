@@ -48,8 +48,9 @@ The intent of this Microservice is to provide the Pensioner detail like name, PA
    **Steps and Action**
    
       => This Microservice is to fetch the pensioner detail by the Aadhaar number.
-      => Database will be populated with pre-defined data from `data.sql` as part of the Microservice. 
-      => The database contains the details of the Pensioners. 
+      => Flat file(CSV file with pre-defined data) should be created as part of the Microservice. 
+      => This file has to contain data for 20 Pensioners. This has to be read and loaded into List for
+          ALL the operations of the microservice.
       
    **Endpoint**
    
@@ -127,5 +128,3 @@ If details are valid, pension amount and bankCharges is correct then user will f
 ## 5. Pension Management Portal
 
 This is the front end made using Angular, open VS code and enter `ng serve --open` or `ng serve --open --no-live-reload` in the terminal to run the application at `http:\\localhost:4200`
-
-Testing again

@@ -18,12 +18,6 @@ public class PensionerDetailExceptionTest {
 	@InjectMocks
 	private AuthorizationException authorizationException;
 	
-	@InjectMocks
-	private ExceptionDetails exceptionDetails;
-	
-	@InjectMocks
-	private GlobalExceptionHandler globalExceptionHandler;
-	
 	@Test
 	public void testAadharNumberNotFound()
 	{
