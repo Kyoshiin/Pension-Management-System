@@ -5,7 +5,6 @@ import com.cts.pensioner.detail.exception.AuthorizationException;
 import com.cts.pensioner.detail.feignclient.AuthorisingClient;
 import com.cts.pensioner.detail.model.PensionerDetail;
 import com.cts.pensioner.detail.service.PensionerDetailService;
-import javassist.NotFoundException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -39,12 +38,12 @@ public class PensionerDetailControllerMethodTest {
     }
 
     @Test
-    public void testGetPensionerDetailByAadhar() throws AadharNumberNotFound, AuthorizationException, NotFoundException {
+    public void testGetPensionerDetailByAadhar() throws AadharNumberNotFound, AuthorizationException {
         String token = "dummy";
         Mockito.when(authorisingClient.authorizeTheRequest(token)).thenReturn(true);
-        PensionerDetail pensionerDetail = new PensionerDetail(420559429029l, "Pratyay", LocalDate.of(1999, 04, 28), "BSDPS1495K", 29000, 1200, "self", "SBI", "9029486523", "private");
-        Mockito.when(pensionerDetailService.getPensionerDetailByAadharCardFromDB(420559429029l)).thenReturn(pensionerDetail);
-        assertEquals(pensionerDetailController.getPensionerDetailByAadhar(token, 420559429029l), pensionerDetail);
+        PensionerDetail pensionerDetail = new PensionerDetail(420559429029L, "Pratyay", LocalDate.of(1999, 04, 28), "BSDPS1495K", 29000, 1200, "self", "SBI", "9029486523", "private");
+        Mockito.when(pensionerDetailService.getPensionerDetailByAadhaarNumber(String.valueOf(420559429029L))).thenReturn(pensionerDetail);
+        assertEquals(pensionerDetailController.getPensionerDetailByAadhar(token, 420559429029L), pensionerDetail);
     }
 
 }

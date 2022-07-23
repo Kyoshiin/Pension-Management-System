@@ -48,8 +48,9 @@ The intent of this Microservice is to provide the Pensioner detail like name, PA
    **Steps and Action**
    
       => This Microservice is to fetch the pensioner detail by the Aadhaar number.
-      => Database will be populated with pre-defined data from `data.sql` as part of the Microservice. 
-      => The database contains the details of the Pensioners. 
+      => Flat file(CSV file with pre-defined data) should be created as part of the Microservice. 
+      => This file has to contain data for 20 Pensioners. This has to be read and loaded into List for
+          ALL the operations of the microservice.
       
    **Endpoint**
    
@@ -68,7 +69,7 @@ This microservice is responsible for verifying pension amount and bank charges f
    * URL - http://localhost:8300/disbursement/disbursePension
    * Then enter previously generated **valid** Token that you had copied into the Authorization header as Bearer Token.
    * This endpoint performs the verification only to authorized request. Access this using the POSTMAN client    
-   * Method - GET
+   * Method - POST
 
   **Valid Input**
 ```
@@ -99,7 +100,7 @@ If details are valid, pension amount and bankCharges is correct then user will f
 ```
 {
   "aadharNumber": "420559429029",
-  "dateOfBirth": "1956-04-28",
+  "dateOfBirth": "28-04-1999",
   "name": "Pratyay",
   "pan": "BSDPS1495K",
   "pensionType": "self"

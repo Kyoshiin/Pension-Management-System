@@ -1,5 +1,12 @@
 package com.cts.authorization.controller;
 
+import com.cts.authorization.config.JwtTokenUtil;
+import com.cts.authorization.exception.AuthorizationException;
+import com.cts.authorization.model.AuthenticationRequest;
+import com.cts.authorization.model.AuthenticationResponse;
+import com.cts.authorization.service.JwtUserDetailsService;
+import io.jsonwebtoken.ExpiredJwtException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,21 +14,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.cts.authorization.config.JwtTokenUtil;
-import com.cts.authorization.exception.AuthorizationException;
-import com.cts.authorization.model.AuthenticationRequest;
-import com.cts.authorization.model.AuthenticationResponse;
-import com.cts.authorization.service.JwtUserDetailsService;
-
-import io.jsonwebtoken.ExpiredJwtException;
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @Slf4j
