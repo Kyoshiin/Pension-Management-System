@@ -69,7 +69,7 @@ This microservice is responsible for verifying pension amount and bank charges f
    * URL - http://localhost:8300/disbursement/disbursePension
    * Then enter previously generated **valid** Token that you had copied into the Authorization header as Bearer Token.
    * This endpoint performs the verification only to authorized request. Access this using the POSTMAN client    
-   * Method - GET
+   * Method - POST
 
   **Valid Input**
 ```
