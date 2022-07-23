@@ -100,7 +100,7 @@ If details are valid, pension amount and bankCharges is correct then user will f
 ```
 {
   "aadharNumber": "420559429029",
-  "dateOfBirth": "1956-04-28",
+  "dateOfBirth": "28-04-1999",
   "name": "Pratyay",
   "pan": "BSDPS1495K",
   "pensionType": "self"
