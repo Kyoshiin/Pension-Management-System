@@ -15,7 +15,7 @@
         </div>
         <div *ngIf="isLoggedIn()">
           <li class="nav-item">
-            <a class="nav-link" routerLink="pension-details" href="#">Pension Details</a>
+            <a class="nav-link " routerLink="pension-details" href="#">Pension Details</a>
           </li>
         </div>
         <div *ngIf="isLoggedIn()">
@@ -23,8 +23,8 @@
             <a class="nav-link" routerLink="process-pension" href="#">Process Pension</a>
           </li>
         </div>
-        <div *ngIf="isLoggedIn()">
-          <li class="nav-item">
+        <div  *ngIf="isLoggedIn()">
+          <li class="nav-item ">
             <a class="nav-link" (click)="logout()" href="#"><i class="fas fa-sign-out-alt">&nbsp;</i>Logout</a>
           </li>
         </div>
