@@ -20,6 +20,9 @@ public class PensionDisbursementExceptionTest {
 	@InjectMocks
 	private AuthorizationException authorizationException;
 	
+	@InjectMocks
+	private ExceptionDetails exceptionDetails;
+	
 	@Test
 	public void testAadharNumberNotFound()
 	{
