@@ -68,7 +68,7 @@ This microservice is responsible for verifying pension amount and bank charges f
    * URL - http://localhost:8300/disbursement/disbursePension
    * Then enter previously generated **valid** Token that you had copied into the Authorization header as Bearer Token.
    * This endpoint performs the verification only to authorized request. Access this using the POSTMAN client    
-   * Method - GET
+   * Method - POST
 
   **Valid Input**
 ```
@@ -128,4 +128,3 @@ If details are valid, pension amount and bankCharges is correct then user will f
 
 This is the front end made using Angular, open VS code and enter `ng serve --open` or `ng serve --open --no-live-reload` in the terminal to run the application at `http:\\localhost:4200`
 
-Testing again
