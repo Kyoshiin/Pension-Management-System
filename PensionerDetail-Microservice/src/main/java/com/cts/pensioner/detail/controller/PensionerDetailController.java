@@ -25,7 +25,7 @@ public class PensionerDetailController {
 
         if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
 //            return pensionerDetailService.getPensionerDetailByAadharCardFromDB(aadharNumber);
-            return pensionerDetailService.getPensionerDetailByAadhaarNumberFromCSV(String.valueOf(aadharNumber));
+            return pensionerDetailService.getPensionerDetailByAadhaarNumber(String.valueOf(aadharNumber));
         } else {
             throw new AuthorizationException("Not allowed");
         }

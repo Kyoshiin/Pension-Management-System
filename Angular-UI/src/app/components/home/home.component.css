@@ -1,5 +1,5 @@
 .bg-dark-blue {
-    background-color: darkblue;
+    background-color: #6f42c1;
     color: white;
 }
 
@@ -28,7 +28,7 @@
 
 #pension-amount {
     height: 25em;
-    background-image: url("../../../assets/images/2.jpg");
+    background-image: url("../../../assets/images/2.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

@@ -1,8 +1,9 @@
-<div class="container-body">
+<div class="parent">
+<div class="container-body ">
     <h2 class="text-center main-head">Welcome to Pension Mangement System</h2>
-    <div class="outer-div col-lg-6 offset-lg-3">
+    <div class="outer-div col-lg-6 offset-lg-3 ">
         <form (ngSubmit)='handleLogin()' #userForm='ngForm' class="px-3">
-            <div class="form-group">
+            <div class="form-group ">
                 <label for="username"><strong>Username <span class="text-danger">*</span></strong></label>
                 <input type="text" class="form-control mt-1" name="username" id="username" #username="ngModel"
                     [(ngModel)]='userModel.userName' minlength="3" maxlength="25" placeholder="Enter Username"
@@ -46,4 +47,5 @@
             </div>
         </form>
     </div>
+</div>
 </div>

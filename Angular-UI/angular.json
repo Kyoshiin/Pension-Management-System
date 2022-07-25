@@ -106,5 +106,8 @@
       }
     }
   },
-  "defaultProject": "pension-management"
+  "defaultProject": "pension-management",
+  "cli": {
+    "analytics": "5212de71-7cbe-427b-8279-5f4b0db8c5bd"
+  }
 }

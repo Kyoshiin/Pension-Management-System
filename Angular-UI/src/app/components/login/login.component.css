@@ -1,7 +1,14 @@
-.container-body{
+
+
+.parent{
     height: 650px;  
     color: #fff;
     background-image: url("../../../assets/images/1.jpg");  
     background-size: 100%;  
     background-size: cover;
+
+}
+.container-body{
+    margin-left: 400px;
+    padding-top: 50px;
 }
