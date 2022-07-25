@@ -39,24 +39,6 @@ class ProcessPensionMicroserviceApplicationTests {
     }
 
     @Test
-    void testEqualAndHashCode() {
-        PensionerDetail pensionerDetail1 = new PensionerDetail(420559429029l, "Parthik", LocalDate.of(1999, 12, 03), "BSDPS1495K", 29000, 1200, "self", "SBI", "9029486523", "private");
-        PensionerDetail pensionerDetail2 = new PensionerDetail(420559429029l, "Parthik", LocalDate.of(1999, 12, 03), "BSDPS1495K", 29000, 1200, "self", "SBI", "9029486523", "private");
-
-        assertThat(assertThat(pensionerDetail1).isEqualTo(pensionerDetail2));
-
-    }
-
-    @Test
-    void testNotEqualAndHashCode() {
-        PensionerDetail pensionerDetail1 = new PensionerDetail(420559429030l, "Shubhm", LocalDate.of(1999, 12, 03), "BSDPS1495K", 29000, 1200, "self", "SBI", "9029486523", "private");
-        PensionerDetail pensionerDetail2 = new PensionerDetail(420559429029l, "Parthik", LocalDate.of(1999, 12, 03), "BSDPS1495K", 29000, 1200, "self", "SBI", "9029486523", "private");
-
-        assertThat(assertThat(pensionerDetail1).isNotEqualTo(pensionerDetail2));
-
-    }
-
-    @Test
     void testNoArgs() {
         assertThat(new PensionerDetail()).isNotNull();
     }

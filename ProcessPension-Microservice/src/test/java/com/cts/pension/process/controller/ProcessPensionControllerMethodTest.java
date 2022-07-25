@@ -61,8 +61,8 @@ public class ProcessPensionControllerMethodTest {
 	{
 		String token = "dummy";
 		Mockito.when(authorisingClient.authorizeTheRequest(token)).thenReturn(true);
-		PensionerInput pensionerInput = new PensionerInput(420559429029l, "Parthik", LocalDate.of(1999, 12, 03), "BSDPS1495K", "self");
-		PensionDetail pensionDetail = new PensionDetail("Parthik", LocalDate.of(1999, 12, 03), "BSDPS1495K", "self", 24560.0);
+		PensionerInput pensionerInput = new PensionerInput(420559429029l, "Pratyay", LocalDate.of(1999, 04, 28), "BSDPS1495K", "self");
+		PensionDetail pensionDetail = new PensionDetail("Pratyay", LocalDate.of(1999, 04, 28), "BSDPS1495K", "self", 24560.0);
 		Mockito.when(processPensionService.calculatePension(token, pensionerInput)).thenReturn(pensionDetail);
 		assertEquals(processPensionController.getPensionDetail(token, pensionerInput), pensionDetail);
 	}
