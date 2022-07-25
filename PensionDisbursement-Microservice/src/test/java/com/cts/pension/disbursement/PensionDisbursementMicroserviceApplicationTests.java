@@ -17,10 +17,10 @@ class PensionDisbursementMicroserviceApplicationTests {
     void contextLoads() {
     }
 
-   // @Test
-   // void main() {
-      //  PensionDisbursementMicroserviceApplication.main(new String[]{});
-   // }
+    // @Test
+    // void main() {
+    //  PensionDisbursementMicroserviceApplication.main(new String[]{});
+    // }
 
     @Test
     void testSetterMethod() {
@@ -44,7 +44,7 @@ class PensionDisbursementMicroserviceApplicationTests {
         assertThat(new PensionerDetail()).isNotNull();
     }
 
-   
+
     @Test
     void testProcessPensionResponce() {
         ProcessPensionResponse processPensionResponse = new ProcessPensionResponse();

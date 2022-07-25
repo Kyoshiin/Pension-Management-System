@@ -14,8 +14,7 @@ export class AppComponent {
     private authService: AuthService) { }
 
   isLoggedIn() {
-        console.log("is logged in app comp");
-    return this.authService.isLoggedIn()
+    return this.authService.isLoggedIn();
   }
 
   logout() {

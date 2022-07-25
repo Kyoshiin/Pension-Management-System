@@ -7,7 +7,6 @@ import com.cts.authorization.service.JwtUserDetailsService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -42,18 +41,19 @@ class JwtAuthenticationControllerTest {
         when(jwtTokenUtil.getUsernameFromToken("Bearer token")).thenReturn(null);
         assertThat(controller.validateRequest("Bearer token")).isFalse();
     }
-    	@Test
-	void testGenerateToken() throws Exception {
-		AuthenticationRequest req = new AuthenticationRequest("roy","123");
-		UserModel user = new UserModel(1,"roy", "123");
-		UserDetails details = new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
-				new ArrayList<>());
-		when(userDetailsService.loadUserByUsername("roy")).thenReturn(details);
-		when(jwtTokenUtil.generateToken(details)).thenReturn("123");
-		ResponseEntity<?> entity = controller.createAuthenticationToken(req);
-		assertThat(Integer.valueOf(entity.getStatusCodeValue()).equals(200)).isTrue();
 
-	}
+    @Test
+    void testGenerateToken() throws Exception {
+        AuthenticationRequest req = new AuthenticationRequest("roy", "123");
+        UserModel user = new UserModel(1, "roy", "123");
+        UserDetails details = new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
+                new ArrayList<>());
+        when(userDetailsService.loadUserByUsername("roy")).thenReturn(details);
+        when(jwtTokenUtil.generateToken(details)).thenReturn("123");
+        ResponseEntity<?> entity = controller.createAuthenticationToken(req);
+        assertThat(Integer.valueOf(entity.getStatusCodeValue()).equals(200)).isTrue();
+
+    }
 
     @Test
     public void testAuthorizationInvalid() throws Exception {

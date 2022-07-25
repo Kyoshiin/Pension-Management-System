@@ -16,7 +16,7 @@ class UserRepositoryTest {
     private UserRepository repo;
 
     @Test
-    void testUserDaoFindByName() {
+    void testUserRepoFindByName() {
         UserModel user = new UserModel(1, "roy", "123");
         when(repo.findByUserName("roy")).thenReturn(user);
         assertThat(repo.findByUserName("roy").equals(user));

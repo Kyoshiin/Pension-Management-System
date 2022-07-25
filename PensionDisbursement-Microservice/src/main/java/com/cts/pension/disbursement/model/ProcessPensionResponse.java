@@ -10,11 +10,11 @@ public class ProcessPensionResponse {
         this.processPensionStatusCode = processPensionStatusCode;
     }
 
-    public void setProcessPensionStatusCode(int processPensionStatusCode) {
-        this.processPensionStatusCode = processPensionStatusCode;
-    }
-
     public int getProcessPensionStatusCode() {
         return processPensionStatusCode;
+    }
+
+    public void setProcessPensionStatusCode(int processPensionStatusCode) {
+        this.processPensionStatusCode = processPensionStatusCode;
     }
 }

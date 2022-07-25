@@ -10,19 +10,17 @@ import javax.persistence.Table;
 @Table(name = "users")
 public class UserModel {
 
+    @Id
+    @GeneratedValue
+    private int id;
+    private String userName;
+    private String password;
+
     public UserModel(int id, String userName, String password) {
         this.id = id;
         this.userName = userName;
         this.password = password;
     }
-
-    @Id
-    @GeneratedValue
-    private int id;
-
-    private String userName;
-
-    private String password;
 
     public UserModel() {
 

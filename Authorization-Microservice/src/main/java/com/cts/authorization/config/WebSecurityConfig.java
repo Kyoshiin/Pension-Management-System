@@ -44,11 +44,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         //not enable authorization for this endpoint(s)
-        httpSecurity.csrf().disable().authorizeRequests().antMatchers("/authenticate","/**")
+        httpSecurity.csrf().disable().authorizeRequests().antMatchers("/authenticate", "/**")
                 .permitAll().anyRequest().authenticated().and().exceptionHandling()
                 .and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-                httpSecurity.headers().frameOptions().disable(); //for loading db
+        httpSecurity.headers().frameOptions().disable(); //for loading db
 
 
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
