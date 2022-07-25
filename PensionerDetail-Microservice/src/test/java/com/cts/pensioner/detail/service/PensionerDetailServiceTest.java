@@ -31,7 +31,7 @@ public class PensionerDetailServiceTest {
 
         String token = "dummy";
         Mockito.when(authClient.authorizeTheRequest(token)).thenReturn(true);
-        assertEquals(pensionerDetailService.getPensionerDetailByAadhaarNumber(String.valueOf(420559429029l)), pensionerDetail);
+        assertEquals(pensionerDetailService.getPensionerDetailByAadhaarNumber(String.valueOf(420559429029L)), pensionerDetail);
     }
 
 }

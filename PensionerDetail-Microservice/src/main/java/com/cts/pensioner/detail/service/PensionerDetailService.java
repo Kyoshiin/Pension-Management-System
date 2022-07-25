@@ -48,9 +48,9 @@ public class PensionerDetailService {
                 }
             }
         } catch (NumberFormatException | IOException | ParseException e) {
-            throw new AadharNumberNotFound("No such Aadhar number found");
+            throw new AadharNumberNotFound("No such Aadhaar number found");
         }
-        throw new AadharNumberNotFound("No such Aadhar number found");
+        throw new AadharNumberNotFound("No such Aadhaar number found");
     }
 
     public LocalDate parseDate(String inpdate) throws ParseException {

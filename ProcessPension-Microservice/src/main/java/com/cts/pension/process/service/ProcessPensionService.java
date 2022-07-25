@@ -18,6 +18,9 @@ public class ProcessPensionService {
     @Autowired
     private PensionDisbursementClient pensionDisbursementClient;
 
+    /**
+     * Consumes PensionDetails MicroService
+     */
     public PensionDetail calculatePension(String token, PensionerInput pensionerInput) throws PensionerDetailException, AuthorizationException, AadharNumberNotFound {
         
         PensionerDetail pensionerDetail;
@@ -54,6 +57,9 @@ public class ProcessPensionService {
         }
     }
 
+    /**
+     * Consumes PensionDisbursement MicroService
+     */
     //get the Process Response Code(10 or 21) If Process code is 10 then Suceess and 21 means not success
     public ProcessPensionResponse getCode(String token, ProcessPensionInput processPensionInput) throws AuthorizationException, AadharNumberNotFound {
         try {

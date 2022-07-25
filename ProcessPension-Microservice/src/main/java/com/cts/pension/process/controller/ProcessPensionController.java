@@ -28,9 +28,9 @@ public class ProcessPensionController {
             @RequestHeader(value = "Authorization") String requestTokenHeader,
             @RequestBody PensionerInput pensionerInput)
             throws AuthorizationException, PensionerDetailException, AadharNumberNotFound {
-        System.out.println("In process pension controller");
+
         if (authorisingClient.authorizeTheRequest(requestTokenHeader)) {
-            System.out.println("authorization success");
+
             return processPensionService.calculatePension(requestTokenHeader, pensionerInput);
         } else {
             throw new AuthorizationException("Not allowed");
