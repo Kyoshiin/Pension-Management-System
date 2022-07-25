@@ -10,16 +10,16 @@ import static org.mockito.Mockito.when;
 
 
 @DataJpaTest
-class UserDaoTest {
+class UserRepositoryTest {
 
     @MockBean
-    private UserRepository dao;
+    private UserRepository repo;
 
     @Test
     void testUserDaoFindByName() {
-        UserModel user = new UserModel(1, "admin", "password");
-        when(dao.findByUserName("admin")).thenReturn(user);
-        assertThat(dao.findByUserName("admin").equals(user));
+        UserModel user = new UserModel(1, "roy", "123");
+        when(repo.findByUserName("roy")).thenReturn(user);
+        assertThat(repo.findByUserName("roy").equals(user));
     }
 
 }

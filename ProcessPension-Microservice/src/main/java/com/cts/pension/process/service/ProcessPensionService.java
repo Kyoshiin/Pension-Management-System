@@ -22,7 +22,7 @@ public class ProcessPensionService {
      * Consumes PensionDetails MicroService
      */
     public PensionDetail calculatePension(String token, PensionerInput pensionerInput) throws PensionerDetailException, AuthorizationException, AadharNumberNotFound {
-        
+
         PensionerDetail pensionerDetail;
 
         //getting pensionerDetail via other micorservice

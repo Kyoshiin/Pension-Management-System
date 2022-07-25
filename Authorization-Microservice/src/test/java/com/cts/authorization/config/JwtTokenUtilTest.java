@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -20,20 +21,17 @@ class JwtTokenUtilTest {
 	
 	@Autowired
 	private JwtTokenUtil util;
-	
-	@MockBean
-	Claims claim;
-	
+
 	@Test
 	void testGenerateTokenWithRandomUserGeneratesNull() {
-		UserDetails details = new org.springframework.security.core.userdetails.User("admin", "pass",
+		UserDetails details = new org.springframework.security.core.userdetails.User("Hacker", "pass",
 				new ArrayList<>());
 		assertThat(util.generateToken(details)).isNotNull();
 	}
 	
 	@Test
 	void validateTokenTest() {
-		userDetails = new User("admin", "admin", new ArrayList<>());
+		userDetails = new User("roy", "123", new ArrayList<>());
 		String generateToken = util.generateToken(userDetails);
 		Boolean validateToken = util.validateToken(generateToken, userDetails);
 		assertThat(validateToken).isTrue();

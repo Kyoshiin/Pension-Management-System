@@ -6,7 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
@@ -20,30 +19,30 @@ import static org.mockito.Mockito.when;
 class JwtUserDetailsServiceTest {
 
     @Mock
-    private UserRepository userDao;
+    private UserRepository userRepository;
 
     @InjectMocks
     private JwtUserDetailsService service;
 
 
     @BeforeEach
-    void setUp() throws Exception {
+    void setUp() {
     }
 
     @Test
     void loadUserByUserNameShouldThrowExceptionTest() {
-        when(userDao.findByUserName("wrongUserName")).thenReturn(null);
+        when(userRepository.findByUserName("wrongUserName")).thenReturn(null);
         assertThatThrownBy(() -> service.loadUserByUsername("wrongUserName"))
                 .isInstanceOf(UsernameNotFoundException.class)
                 .hasMessage("User not found with username: wrongUserName");
-        verify(userDao, Mockito.times(1)).findByUserName("wrongUserName");
+        verify(userRepository).findByUserName("wrongUserName");
     }
 
     @Test
     void loadUserByUserNameShouldUserNameTest() {
-        when(userDao.findByUserName("admin")).thenReturn(new UserModel(1, "admin", "pass"));
-        assertThat(service.loadUserByUsername("admin")).isNotNull();
-        verify(userDao, Mockito.times(1)).findByUserName("admin");
+        when(userRepository.findByUserName("roy")).thenReturn(new UserModel(1, "roy", "123"));
+        assertThat(service.loadUserByUsername("roy")).isNotNull();
+        verify(userRepository).findByUserName("roy"); // for checking if mock service was called
     }
 
 }

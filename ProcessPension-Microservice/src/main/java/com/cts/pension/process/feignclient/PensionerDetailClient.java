@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-@FeignClient(name ="PensionerDetail-Microservice",url = "${pensionDetail.url}")
+@FeignClient(name = "PensionerDetail-Microservice", url = "${pensionDetail.url}")
 public interface PensionerDetailClient {
-	
-	@GetMapping("/PensionerDetailByAadhaar/{aadharNumber}")
-	PensionerDetail getPensionerDetailByAadhaar(
-			@RequestHeader(value = "Authorization") String requestTokenHeader,
-			@PathVariable long aadharNumber) throws AuthorizationException, AadharNumberNotFound;
-	
+
+    @GetMapping("/PensionerDetailByAadhaar/{aadharNumber}")
+    PensionerDetail getPensionerDetailByAadhaar(
+            @RequestHeader(value = "Authorization") String requestTokenHeader,
+            @PathVariable long aadharNumber) throws AuthorizationException, AadharNumberNotFound;
+
 
 }
