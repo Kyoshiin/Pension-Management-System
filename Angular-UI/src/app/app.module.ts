@@ -8,10 +8,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { PensionDetailsComponent } from './components/pension-details/pension-details.component';
+import { PensionerDetailsComponent } from './components/pensioner-details/pensioner-details.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProcessPensionComponent } from './components/process-pension/process-pension.component';
 import { AuthInterceptor } from './utils/auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PensionDetailsComponent,
     ProcessPensionComponent,
     PageNotFoundComponent,
+    PensionerDetailsComponent,
   ],
   imports: [
     BrowserModule,

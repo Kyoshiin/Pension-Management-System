@@ -37,13 +37,27 @@ public class PensionDisbursementService {
         }
 
         //checking if charge is correct
-        if (checkAmount == serviceCharge) {
+        if (checkAmount == serviceCharge && verifyPensionAmount(pensionerDetail, processPensionInput.getPensionAmount())) {
             processPensionResponse.setProcessPensionStatusCode(10);
         } else {
             processPensionResponse.setProcessPensionStatusCode(21);
         }
 
         return processPensionResponse;
+    }
+
+    public boolean verifyPensionAmount(PensionerDetail pensionerDetails, double pensionAmount) {
+
+        double expectedAmount = 0;
+
+        // calculating Pension Amount
+        if (pensionerDetails.getPensionType().equalsIgnoreCase("Self")) {
+            expectedAmount = (0.80 * pensionerDetails.getSalaryEarned()) + pensionerDetails.getAllowances();
+        } else if (pensionerDetails.getPensionType().equalsIgnoreCase("Family")) {
+            expectedAmount = (0.50 * pensionerDetails.getSalaryEarned()) + pensionerDetails.getAllowances();
+        }
+
+        return expectedAmount == pensionAmount;
     }
 
 }

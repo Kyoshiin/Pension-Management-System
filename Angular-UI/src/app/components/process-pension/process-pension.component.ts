@@ -11,6 +11,9 @@ import { ProcessPensionService } from 'src/app/services/process-pension.service'
 })
 export class ProcessPensionComponent implements OnInit {
 
+  processPensionResponse = new ProcessPensionResponse(21);
+  processPensionInput = new ProcessPensionInput("", 0, 0);
+
   constructor(
     private pservice: ProcessPensionService,
     private authservice: AuthService,
@@ -28,8 +31,6 @@ export class ProcessPensionComponent implements OnInit {
     this.fieldErrors = []
   }
 
-  processPensionResponse = new ProcessPensionResponse(21);
-  processPensionInput = new ProcessPensionInput("", 0, 0);
 
   handleProcessPensionInput() {
     this.pservice.processPension(this.processPensionInput)

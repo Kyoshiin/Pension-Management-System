@@ -38,7 +38,7 @@ public class ProcessPensionController {
     }
 
     //for status code response
-    //Returns the Process Response Code(10 or 21) If Process code is 10 then Suceess and 21 means not success
+    //Returns the Process Response Code(10 or 21) If Process code is 10 then Success and 21 means not success
     @PostMapping("/ProcessPension")
     public ProcessPensionResponse getprocessingCode(
             @RequestHeader(value = "Authorization") String requestTokenHeader,

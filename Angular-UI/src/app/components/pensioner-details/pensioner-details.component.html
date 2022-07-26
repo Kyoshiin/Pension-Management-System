@@ -1,0 +1,56 @@
+<h2 class="text-center">Enter details to calculate the pension amount</h2>
+<div class="outer-div col-lg-6 offset-lg-3">
+    <form #pensionForm='ngForm' (ngSubmit)='handleAadhaarInput(); pensionForm.resetForm()' class="px-3">
+
+        <!-- Aadhaar Number -->
+        <div class="form-group mt-2">
+            <label for="aadhaar-number"><strong>Aadhaar Number <span class="text-danger">*</span></strong></label>
+            <input type="text" class="form-control mt-1" id="aadhaar-number" name="aadhaar" #aadhaar=ngModel
+                [(ngModel)]='aadharNo' pattern="^[0-9]{12}$" placeholder="Enter the 12 digit Aadhaar number" required />
+            <!-- Validations -->
+            <div *ngIf="aadhaar.invalid && (aadhaar.dirty || aadhaar.touched)" class="text-error">
+                <div *ngIf="aadhaar.errors?.required">
+                    * Aadhaar Number is required
+                </div>
+                <div *ngIf="aadhaar.errors?.pattern">
+                    * Aadhaar Number format is incorrect
+                </div>
+            </div>
+        </div> <!-- Aadhaar ends here -->
+
+
+        <!-- Handle login and reset -->
+        <div class="text-center">
+            <button class="btn btn-primary mt-3 mx-3" [disabled]="!pensionForm.valid">Submit Details</button>
+            <button type="reset" class="btn btn-secondary mt-3" (click)="handleReset()">Reset</button>
+        </div><!-- Login ends here -->
+
+    </form> <!-- Form ends here -->
+</div>
+
+<!-- Success Message -->
+<h2 [ngClass]="color" class="break-div main-head mt-3 text-center" (mouseleave)="handleReset()">{{ msg }}</h2>
+
+<table style=" margin-top: 50px; margin-left: auto;
+
+    margin-right: auto;
+  " class="table table-striped">
+    <thead>
+        <tr>
+            <th>Pensioner Name</th>
+            <th>PAN</th>
+            <th>Bank Name</th>
+            <th>Bank Account Number</th>
+            <th>Bank Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ pensionerDetails.name }}</td>
+            <td>{{ pensionerDetails.pan }}</td>
+            <td>{{ pensionerDetails.bankName }}</td>
+            <td>{{ pensionerDetails.accountNumber}}</td>
+            <td>{{ pensionerDetails.bankType }}</td>
+        </tr>
+    </tbody>
+</table>

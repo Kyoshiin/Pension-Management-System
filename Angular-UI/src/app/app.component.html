@@ -23,6 +23,11 @@
             <a class="nav-link" routerLink="process-pension" href="#">Process Pension</a>
           </li>
         </div>
+        <div *ngIf="isLoggedIn()">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="pensioner-details" href="#">Pensioner Details</a>
+          </li>
+        </div>
         <div  *ngIf="isLoggedIn()">
           <li class="nav-item ">
             <a class="nav-link" (click)="logout()" href="#"><i class="fas fa-sign-out-alt">&nbsp;</i>Logout</a>

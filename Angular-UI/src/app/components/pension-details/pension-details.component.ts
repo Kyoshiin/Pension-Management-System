@@ -43,7 +43,7 @@ export class PensionDetailsComponent implements OnInit {
         data => {
           this.color = "text-success"
           this.pensionDetails = data
-          this.msg = "The pension amount is " + this.pensionDetails.pensionAmount + "\nPlease make a note of this";
+          this.msg = "The pension amount is Rs. " + this.pensionDetails.pensionAmount + "\nPlease make a note of this";
         },
         error => {
           try {
@@ -55,7 +55,7 @@ export class PensionDetailsComponent implements OnInit {
             }
           } catch (e) {
             // feign error if field error can't be parsed ...
-            this.msg = "Service is down, please try again later..."
+            this.msg = "Invalid pensioner detail provided, please provide valid details"
             this.color = "text-danger"
             console.log(this.msg);
           }

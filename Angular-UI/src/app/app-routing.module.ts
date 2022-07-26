@@ -12,6 +12,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { PensionerDetailsComponent } from './components/pensioner-details/pensioner-details.component';
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "/login" },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: "home", component: HomeComponent, canActivate: [AuthGuardService] },
   { path: "process-pension", component: ProcessPensionComponent, canActivate: [AuthGuardService] },
   { path: "pension-details", component: PensionDetailsComponent, canActivate: [AuthGuardService] },
+  { path: "pensioner-details", component: PensionerDetailsComponent, canActivate: [AuthGuardService] },
   { path: '**', component: PageNotFoundComponent },
 ];
 
