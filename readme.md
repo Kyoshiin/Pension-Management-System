@@ -1,8 +1,7 @@
-# Team-6-pension-management
-Code for Final project in internship training, Pension Management by Team-6 of cohort GN22IOTJ001
+# Pension Management System
 
 ## Team Members
-1. PRATYAY ROY
+1. PRATYAY ROY (Leader)
 2. SUMANTH REDDY
 3. RANGANATH KONANKI
 4. GANDAVARAPU VIVEKA
